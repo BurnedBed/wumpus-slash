@@ -7,9 +7,13 @@ client.on('ready', () => {
    slashManager
       .getCommands()
       .then((commands) => {
-         console.log(commands);
+        // console.log(commands);
       })
       .catch((error) => console.log('Oops!' + error));
 });
 
-client.login('SOMETHING_VERY_SECRET');
+slashManager.on('interaction', (interaction) => {
+   console.log(interaction);
+});
+
+client.login('VERY_SECRET_TOKEN');

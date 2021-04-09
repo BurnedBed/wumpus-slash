@@ -10,12 +10,15 @@
   "author": "linker-123",
   "license": "Apache-2.0",
   "dependencies": {
-    "discord.js": "^12.5.3"
+    "discord.js": "^12.5.3",
+    "events": "^3.3.0"
   },
   "directories": {
     "example": "examples"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "typescript": "^4.2.4"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Linker-123/slashcommands.git"
@@ -23,5 +26,6 @@
   "bugs": {
     "url": "https://github.com/Linker-123/slashcommands/issues"
   },
-  "homepage": "https://github.com/Linker-123/slashcommands#readme"
+  "homepage": "https://github.com/Linker-123/slashcommands#readme",
+  "typings": "./types"
 }

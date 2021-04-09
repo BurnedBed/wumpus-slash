@@ -1,18 +1,30 @@
-const discordjs = require('discord.js');
+const Discord = require('discord.js');
 const Command = require('./structures/Command');
 const GuildCommandManager = require('./structures/GuildCommandManager');
+const Interaction = require('./structures/Interaction');
+const { EventEmitter } = require('events');
 
 /**
  * Slash command manager
  * @class
+ * @extends {EventEmitter}
  */
-class SlashCommands {
+class SlashCommands extends EventEmitter {
    /**
     *
-    * @param {discordjs.Client} client Client object
+    * @param {Discord.Client} client Client object
     */
    constructor(client) {
+      super();
       this._client = client;
+      this._client.ws.on('INTERACTION_CREATE', (data) => {
+         const interaction = new Interaction(data, client);
+         /**
+          * @event interaction#SlashCommands
+          * @type {Interaction}
+          */
+         this.emit('interaction', interaction);
+      });
    }
 
    /**
