@@ -1,4 +1,4 @@
-Install with: `npm i slashcommands`
+Install with: `npm i wumpus-slash`
 
 A framework to use slash-commands easily in discord.js.
 The framework is mostly documented, if you are confused with what data to fill in see [this](https://discord.com/developers/docs/interactions/slash-commands#data-models-and-types)
