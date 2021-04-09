@@ -1,12 +1,18 @@
 {
-  "name": "slashcommands",
+  "name": "wumpus-slash",
   "version": "1.0.0",
   "description": "A powerful slash commands framework for discord.js",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
+  "keywords": [
+    "slashcommands",
+    "discord slash-commands",
+    "slash commands",
+    "interactions",
+    "slash cmds"
+  ],
   "author": "linker-123",
   "license": "Apache-2.0",
   "dependencies": {
@@ -16,16 +22,13 @@
   "directories": {
     "example": "examples"
   },
-  "devDependencies": {
-    "typescript": "^4.2.4"
-  },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Linker-123/slashcommands.git"
+    "url": "git+https://github.com/Linker-123/wumpus-slash.git"
   },
   "bugs": {
-    "url": "https://github.com/Linker-123/slashcommands/issues"
+    "url": "https://github.com/Linker-123/wumpus-slash/issues"
   },
-  "homepage": "https://github.com/Linker-123/slashcommands#readme",
+  "homepage": "https://github.com/Linker-123/wumpus-slash#readme",
   "typings": "./types"
 }
