@@ -1,6 +1,6 @@
 {
   "name": "wumpus-slash",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "A powerful slash commands framework for discord.js",
   "main": "index.js",
   "scripts": {
