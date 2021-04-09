@@ -3,6 +3,7 @@ const Command = require('./structures/Command');
 const GuildCommandManager = require('./structures/GuildCommandManager');
 const Interaction = require('./structures/Interaction');
 const { EventEmitter } = require('events');
+const CommandOption = require('./structures/CommandOption');
 
 /**
  * Slash command manager
@@ -53,7 +54,10 @@ class SlashCommands extends EventEmitter {
 
    /**
     *
-    * @param {Command} command Command to create
+    * @param {object} command Command to create
+    * @param {string} command.name The name of the command
+    * @param {string} command.description The description of the command
+    * @param {CommandOption[]} command.options Command's options
     * @returns {Promise<Command>}
     */
    create(command) {
@@ -66,7 +70,9 @@ class SlashCommands extends EventEmitter {
    /**
     *
     * @param {string} id ID of the command
-    * @param {Command|object} command
+    * @param {string} command.name The name of the command
+    * @param {string} command.description The description of the command
+    * @param {CommandOption[]} command.options Command's options
     * @returns {Promise<Command>}
     */
    edit(id, command) {
@@ -91,7 +97,10 @@ class SlashCommands extends EventEmitter {
 
    /**
     *
-    * @param {Command[]} commands
+    * @param {object[]} commands
+    * @param {string} commands.name The name of the command
+    * @param {string} commands.description The description of the command
+    * @param {CommandOption[]} commands.options Command's options
     * @returns {Promise<Command[]>}
     */
    bulkOverwrite(commands) {

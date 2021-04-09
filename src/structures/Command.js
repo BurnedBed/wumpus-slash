@@ -7,6 +7,7 @@ const CommandOption = require('./CommandOption');
 class Command {
    /**
     * @param {object} command Command object
+    * @param {string} command.id ID of the command
     * @param {string} command.name The name of the command
     * @param {string} command.description The description of the command
     * @param {CommandOption[]} command.options Command's options

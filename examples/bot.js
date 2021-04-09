@@ -7,7 +7,7 @@ client.on('ready', () => {
    slashManager
       .getCommands()
       .then((commands) => {
-        // console.log(commands);
+         console.log(commands);
       })
       .catch((error) => console.log('Oops!' + error));
 });

@@ -5,3 +5,5 @@ const responseTypes = {
 };
 
 module.exports = { responseTypes };
+
+
