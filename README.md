@@ -8,11 +8,14 @@ The framework is mostly documented, if you are confused with what data to fill i
 const CommandManager = require('slashcommands');
 const { Client, Intents } = require('discord.js');
 const client = new Client({ ws: { intents: Intents.ALL } });
-const slashManager = CommandManager(client);
 
-client.on('ready', () => console.log("I'm ready!"));
+client.on('ready', () => {
+    const slashManager = CommandManager(client);
+});
 client.login('VERY_SECRET_TOKEN');
 ```
+
+### NOTE: you can only create command manager in a ready event or once the client is ready. The package requires your Client ID which is sent once your client is ready.
 
 ### Create a command
 ```js
