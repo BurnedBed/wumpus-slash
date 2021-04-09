@@ -1,0 +1,27 @@
+{
+  "name": "slashcommands",
+  "version": "1.0.0",
+  "description": "A powerful slash commands framework for discord.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "linker-123",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "discord.js": "^12.5.3"
+  },
+  "directories": {
+    "example": "examples"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Linker-123/slashcommands.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Linker-123/slashcommands/issues"
+  },
+  "homepage": "https://github.com/Linker-123/slashcommands#readme"
+}
