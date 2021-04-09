@@ -1,4 +1,3 @@
-## Slashcommands
 Install with: `npm i slashcommands`
 
 A framework to use slash-commands easily in discord.js.
