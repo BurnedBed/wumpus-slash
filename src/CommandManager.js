@@ -18,6 +18,7 @@ class SlashCommands extends EventEmitter {
       super();
       this._client = client;
       this._client.ws.on('INTERACTION_CREATE', (data) => {
+         if (data.type === 1) return;
          const interaction = new Interaction(data, client);
          /**
           * @event interaction#SlashCommands

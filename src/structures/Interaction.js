@@ -4,8 +4,11 @@ const {
    Client,
    Guild,
    GuildChannel,
+   MessageEmbed,
 } = require('discord.js');
 const InteractionData = require('./InteractionData');
+const AllowedMentions = require('./AllowedMentions');
+const { responseTypes } = require('../constants');
 
 /**
  * Represents an interaction
@@ -100,6 +103,36 @@ class Interaction {
        * @private
        */
       this._version = data.version;
+   }
+
+   /**
+    *
+    * @param {object} data Response Object
+    * @param {('Pong'|'ChannelMessageWithSource'|'DeferredChannelMessageWithSource')} data.type Response type
+    * @param {object} data.data Data of this response
+    * @param {boolean} data.data.tts Whether to send this message as text-to-speech
+    * @param {string} data.data.content Message content
+    * @param {MessageEmbed[]} data.data.embeds Array of embeds, max: 10
+    * @param {AllowedMentions} data.data.allowedMentions Allowed mentions object
+    * @param {number} data.data.flags Response flags, use 64 to make the response ephemeral
+    */
+   reply(data) {
+      const interactionResp = {
+         type: responseTypes[data.type || 'ChannelMessageWithSource'],
+         data: {
+            tts: data.data.tts || false,
+            content: data.data.content || '',
+            embeds: data.data.embeds || [],
+            allowed_mentions: new AllowedMentions(
+               data.data.allowedMentions || {}
+            ),
+            flags: data.data.flags || 0,
+         },
+      };
+
+      return this.guild.client.api
+         .interactions(this.id)
+         [this.token].callback.post({ data: interactionResp });
    }
 }
 

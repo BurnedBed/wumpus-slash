@@ -13,7 +13,13 @@ client.on('ready', () => {
 });
 
 slashManager.on('interaction', (interaction) => {
-   console.log(interaction);
+   interaction.reply({
+      type: 'ChannelMessageWithSource',
+      data: {
+         tts: false,
+         content: 'hi'
+      }
+   });
 });
 
 client.login('VERY_SECRET_TOKEN');
