@@ -17,7 +17,7 @@ client.login('VERY_SECRET_TOKEN');
 ### Create a command
 ```js
 slashManager.create({
-    name: "ping"
+    name: "ping",
     description: "Ping pong command"
 });
 ```
