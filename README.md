@@ -5,7 +5,7 @@ The framework is mostly documented, if you are confused with what data to fill i
 
 # Setup
 ```js
-const CommandManager = require('slashcommands');
+const CommandManager = require('wumpus-slash');
 const { Client, Intents } = require('discord.js');
 const client = new Client({ ws: { intents: Intents.ALL } });
 
